@@ -5,22 +5,20 @@ class Sender{
     private client: Whatsapp
 
     constructor(){
-        this.initialize
+        this.initialize()
     }
     
     private initialize(){
-        const qr = (base64Qrimg: string) => {
-            console.log();
+        const qr = (base64Qrimg: string, asciiQR: String) => {
+            console.log(asciiQR);
         }
-
-        const status = (statusSession: string) => {}
 
         const start = (client: Whatsapp) => {
             this.client = client
         }
 
-        create('sender-temp', qr, status)
-        .then((client)=> start(client))
+        create('sender-temp', qr)
+        .then((client) => start(client))
         .catch((error) => console.error(error))
     }
 }
